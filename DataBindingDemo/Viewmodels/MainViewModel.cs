@@ -48,8 +48,7 @@ namespace DataBindingDemo.Viewmodels
                 return _Persons;
             }
         }
-
-    
+                   
 
     }
 }

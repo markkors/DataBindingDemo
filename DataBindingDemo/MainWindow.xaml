@@ -9,7 +9,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
         <DataGrid Name="mygrid" Grid.Row="0" Margin="10" ItemsSource="{Binding Persons}" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -17,6 +18,7 @@
                 <DataGridTextColumn Header="Achternaam" Binding="{Binding Lastname}" Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="btnAddJan" Grid.Row="1" Content="Add" Width="100" Height="100" />
+        <ComboBox Name="mycombo" Grid.Row="1" ItemsSource="{Binding Path=Persons}" DisplayMemberPath="Firstname" SelectedValuePath="Id" />
+        <Button Name="btnAddJan" Grid.Row="2" Content="Add" Width="100" Height="100" />
     </Grid>
 </Window>

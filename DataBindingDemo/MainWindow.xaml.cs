@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,8 +33,16 @@ namespace DataBindingDemo
 
             // binding the controls
             btnAddJan.Click += BtnAddJan_Click;
+            mycombo.SelectionChanged += Mycombo_SelectionChanged;
         }
-        
+
+        private void Mycombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Models.cPerson P = (Models.cPerson)mycombo.SelectedItem;
+            Debug.WriteLine(P.Id);
+
+        }
+
         private void BtnAddJan_Click(object sender, RoutedEventArgs e)
         {
             _VM.Persons.Add(new Models.cPerson("a", "b"));
